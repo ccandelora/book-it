@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tenant_id: 1
+  start_date: 2011-04-02 12:59:45
+  end_date: 2011-04-02 12:59:45
+  price: 1
+  persons: 1
+  type: MyString
+  payment: MyString
+  status: MyString
+
+two:
+  tenant_id: 1
+  start_date: 2011-04-02 12:59:45
+  end_date: 2011-04-02 12:59:45
+  price: 1
+  persons: 1
+  type: MyString
+  payment: MyString
+  status: MyString

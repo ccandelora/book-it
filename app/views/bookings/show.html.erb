@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tenant:</b>
+  <%= @booking.tenant.name %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @booking.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @booking.end_date %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @booking.price %>
+</p>
+
+<p>
+  <b>Persons:</b>
+  <%= @booking.persons %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @booking.type %>
+</p>
+
+<p>
+  <b>Payment:</b>
+  <%= @booking.payment %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @booking.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>

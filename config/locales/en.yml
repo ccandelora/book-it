@@ -3,3 +3,32 @@
 
 en:
   hello: "Hello world"
+  date: 
+    formats:
+      default: "%m/%d/%Y"
+
+## Custom translations
+  bookings:
+    index:
+      title: "Overview of bookings"
+    new:
+      title: "New booking"
+      
+  booking:
+    tenant:     "Tenant"
+    start_date: "Date of arrival"
+    end_date:   "Date of departure"
+    price:      "Price"
+    persons:    "Number of persons"
+    type:       "Booking type"
+    payment:    "Payment details"
+    status:     "Status of booking"
+    short:
+      tenant:     "Tenant"
+      start_date: "Arrival"
+      end_date:   "Departure"
+      price:      "Price"
+      persons:    "Persons"
+      type:       "Type"
+      payment:    "Payment"
+      status:     "Status"
