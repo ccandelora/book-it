@@ -192,6 +192,11 @@ nl:
       title: "Overzicht van reserveringen"
     new:
       title: "Nieuwe reservering"
+  
+  navigation:
+    dashboard:  "Dashboard"
+    tenants:    "Huurders"
+    bookings:   "Reserveringen"
       
   booking:
     tenant:     "Huurder"

@@ -14,6 +14,11 @@ en:
     new:
       title: "New booking"
       
+  navigation:
+    dashboard:  "Dashboard"
+    tenants:    "Tenants"
+    bookings:   "Bookings"
+
   booking:
     tenant:     "Tenant"
     start_date: "Date of arrival"
