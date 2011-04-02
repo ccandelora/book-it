@@ -11,9 +11,9 @@ The project is still in the workings.
 
 ## Requirements
 
-Rails 3.0.5
-Ruby 1.9.2
-Sqlite 3
+* Rails 3.0.5
+* Ruby 1.9.2
+* Sqlite 3
 
 ## Getting started
 
@@ -22,3 +22,5 @@ More info on how to get this baby on the road.
 * Download
 * Run <code>rake db:migrate</code>
 * Fire it up with <code>rails server</code>
+
+To fill it with some test data use <code>rake db:fixtures:load</code>.
