@@ -1,17 +1,55 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  address: MyText
-  city: MyString
-  email: MyString
-  phone: MyString
-  remarks: MyText
+  id: 1
+  name: Rutger Laurman
+  address: Kerkstraat 1
+  city: Amsterdam
+  email: email1@lekkerduidelijk.nl
+  phone: 1234567890
+  remarks: Family of father in law
 
 two:
-  name: MyString
-  address: MyText
-  city: MyString
-  email: MyString
-  phone: MyString
-  remarks: MyText
+  id: 2  
+  name: Willem Veenstra
+  address: Groen van Prinstererstraat 9
+  city: Den Haag
+  email: email2@lekkerduidelijk.nl
+  phone: 1234567890
+  remarks: None
+
+three:
+  id: 3
+  name: Gerard Broerse
+  address: Spronk 2
+  city: Utrecht
+  email: email3@lekkerduidelijk.nl
+  phone: 1234567890
+  remarks: 
+
+four:
+  id: 4
+  name: Sjaak Heemstra
+  address: Achterdijk 7
+  city: Groningen
+  email: email4@lekkerduidelijk.nl
+  phone: 1234567890
+  remarks: Friend of the owner
+
+five:
+  id: 5
+  name: Mevrouw de Vries
+  address: Willem de Zwijgerstraat 5
+  city: Lutjebroek
+  email: email5@lekkerduidelijk.nl
+  phone: 1234567890
+  remarks: 
+
+six:
+  id: 6
+  name: Maarten Janssen
+  address: Polderstraat 47
+  city: Willemstad
+  email: email6@lekkerduidelijk.nl
+  phone: 1234567890
+  remarks: 

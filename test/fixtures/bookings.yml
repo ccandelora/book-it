@@ -3,19 +3,69 @@
 one:
   tenant_id: 1
   start_date: 2011-04-02 12:59:45
-  end_date: 2011-04-02 12:59:45
-  price: 1
-  persons: 1
-  type: MyString
-  payment: MyString
-  status: MyString
+  end_date: 2011-04-09 12:59:45
+  price: 899
+  persons: 6
+  booking_type: "private"
+  payment: -
+  status: confirmed
 
 two:
-  tenant_id: 1
-  start_date: 2011-04-02 12:59:45
-  end_date: 2011-04-02 12:59:45
-  price: 1
-  persons: 1
-  type: MyString
-  payment: MyString
-  status: MyString
+  tenant_id: 2
+  start_date: 2011-04-09 12:59:45
+  end_date: 2011-04-16 12:59:45
+  price: 800
+  persons: 4
+  booking_type: "guest"
+  payment: down payment
+  status: confirmed
+
+three:
+  tenant_id: 3
+  start_date: 2011-04-16 12:59:45
+  end_date: 2011-04-23 12:59:45
+  price: 800
+  persons: 6
+  booking_type: "guest"
+  payment: done
+  status: confirmed
+
+four:
+  tenant_id: 4
+  start_date: 2011-04-23 12:59:45
+  end_date: 2011-04-30 12:59:45
+  price: 200
+  persons: 8
+  booking_type: "prive"
+  payment: done
+  status: confirmed
+
+five:
+  tenant_id: 3
+  start_date: 2011-04-30 12:59:45
+  end_date: 2011-05-07 12:59:45
+  price: 800
+  persons: 6
+  booking_type: "guest"
+  payment: done
+  status: confirmed
+
+six:
+  tenant_id: 5
+  start_date: 2011-05-07 12:59:45
+  end_date: 2011-05-21 12:59:45
+  price: 1200
+  persons: 5
+  booking_type: "guest"
+  payment: pending
+  status: option
+
+seven:
+  tenant_id: 6
+  start_date: 2011-05-21 12:59:45
+  end_date: 2011-05-28 12:59:45
+  price: 800
+  persons: 4
+  booking_type: "guest"
+  payment: down payment
+  status: option
