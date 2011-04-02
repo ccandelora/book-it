@@ -26,7 +26,7 @@
     </td>
     <td><%=h number_to_currency(booking.price, :precision => 0, :unit => "€")+",-" %></td>
     <td><%= booking.persons %></td>
-    <td><%= booking.type %></td>
+    <td><%= booking.booking_type %></td>
     <td><%= booking.payment %></td>
     <td><%= booking.status %></td>
     <td><%= link_to 'Show', booking %></td>
