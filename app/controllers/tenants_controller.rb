@@ -1,4 +1,6 @@
 class TenantsController < ApplicationController
+  
+  before_filter :authenticate
   # GET /tenants
   # GET /tenants.xml
   def index

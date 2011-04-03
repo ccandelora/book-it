@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_filter :authenticate
+  
   def new
     @user = User.new
   end
@@ -13,11 +16,13 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
+    # Allow user to only edit himself
+    @user = current_user
   end
   
   def update
-    @user = User.find(params[:id])
+    # Always write user credentials of current user
+    @user = current_user
     if @user.update_attributes(params[:user])
       redirect_to bookings_path, :notice => 'Updated user information successfully.'
     else

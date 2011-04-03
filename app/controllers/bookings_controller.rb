@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
-  # GET /bookings
-  # GET /bookings.xml
+  
+  before_filter :authenticate
+
   def index
     @bookings = Booking.all
 
@@ -10,8 +11,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  # GET /bookings/1
-  # GET /bookings/1.xml
   def show
     @booking = Booking.find(params[:id])
 
@@ -21,30 +20,26 @@ class BookingsController < ApplicationController
     end
   end
 
-  # GET /bookings/new
-  # GET /bookings/new.xml
   def new
     @booking = Booking.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @booking }
     end
   end
 
-  # GET /bookings/1/edit
+
   def edit
     @booking = Booking.find(params[:id])
   end
 
-  # POST /bookings
-  # POST /bookings.xml
   def create
     @booking = Booking.new(params[:booking])
 
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to(@booking, :notice => 'Booking was successfully created.') }
+        format.html { redirect_to(bookings_path, :notice => 'Booking was successfully created.') }
         format.xml  { render :xml => @booking, :status => :created, :location => @booking }
       else
         format.html { render :action => "new" }
@@ -53,11 +48,9 @@ class BookingsController < ApplicationController
     end
   end
 
-  # PUT /bookings/1
-  # PUT /bookings/1.xml
   def update
     @booking = Booking.find(params[:id])
-
+    
     respond_to do |format|
       if @booking.update_attributes(params[:booking])
         format.html { redirect_to(@booking, :notice => 'Booking was successfully updated.') }
@@ -69,8 +62,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  # DELETE /bookings/1
-  # DELETE /bookings/1.xml
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy

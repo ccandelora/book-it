@@ -1,8 +1,10 @@
 class CommentsController < ApplicationController
-  before_filter :load_tenant
+  before_filter :load_tenant, :except => :destroy
+  before_filter :authenticate, :only => :destroy
 
   def create
     @comment = @tenant.comments.new(params[:comment])
+    @comment.user_id = current_user
     if @comment.save
       redirect_to @tenant, :notice => 'Thanks for your comment'
     else
@@ -11,7 +13,9 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    @comment = @tenant.comments.find(params[:id])
+    # Check if comment is posted by current user
+    @comment = current_user.comments.find(params[:id])
+    @tenant = @comment.tenant
     @comment.destroy
     redirect_to @tenant, :notice => 'Comment deleted'
   end
