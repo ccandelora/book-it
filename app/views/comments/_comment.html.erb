@@ -1,12 +1,16 @@
 <div class='comment'>
   <p>
-    <strong>On <%= comment.created_at.to_s(:long) %> <%= comment.user_id %> said:</strong>
+    <strong><%= comment.user.name %></strong> on  <%= comment.created_at.to_s(:long) %>
+
+    <% if comment.owned_by? current_user %>
     <span class='actions'>
-      <%= link_to 'Delete', 
+      <%= link_to '(delete?)', 
         [@tenant, comment],
         :confirm => 'Are you sure?', 
-        :method => :delete %>
+        :method => :delete %> 
     </span>
+    <% end %>
+
   </p>
   <p>
     <%= comment.body %>
