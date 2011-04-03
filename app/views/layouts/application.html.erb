@@ -15,6 +15,17 @@
       <%= content_tag :li, link_to( t('navigation.bookings'), :controller => "bookings") %>
     </ul>
   </nav>
+  <nav id="userinfo">
+    <% if logged_in? %>
+      Hi <%= @current_user.name %>, 
+      <%= link_to "Edit info", edit_user_path(current_user) %>
+      <%= link_to "New user", new_user_path %>
+      <%= link_to "Logout", logout_path %>
+    <% else %>
+      <%= link_to "Login", login_path %>    
+    <% end %>
+    
+  </nav>
   <section>
     <%= content_tag :p, notice, :class => 'notice' if notice.present? %>
     <%= content_tag :p, alert, :class => 'alert' if alert.present? %>    
