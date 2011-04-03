@@ -1,27 +1,125 @@
 /**
  * Book It default styling
  **/
- 
- table{
-   border:1px solid #ccc;
-   width:100%;
-   border-collapse:collapse;
- }
- table td,
- table th{
-   border:1px solid #ccc;
-   padding:0.2em 0.4em;
- }
- table th{
-   background-color:#e2e2e2;
- }
- header{
-   border:2px solid #aaa;
-   background-color:#eee;
-   padding:4px;
- }
- footer{
-   border-top:2px solid #aaa;
-   padding:3px;
 
+/* Common stuff 
+ ****************************************************************************/
+ 
+  table{
+    border:1px solid #ccc;
+    width:100%;
+    border-collapse:collapse;
+  }
+  table td,
+  table th{
+    border:1px solid #ccc;
+    padding:0.2em 0.4em;
+  }
+  table th{
+    background-color:#e2e2e2;
+  }
+
+  p.notice, p.alert{
+    border:2px solid #dfde9c;
+    border-left:0;
+    border-right:0;
+    padding:5px 10px;
+    margin:2px 5px;
+    background-color:#ffffcc;
+  }
+  p.alert{
+    border-color:#df9c9c;
+    background-color:#ffcccc;
+  } 
+
+/* Layout
+ ****************************************************************************/
+  header{
+    border:2px solid #aaa;
+    background-color:#eee;
+    padding:4px;
+  }
+  footer{
+    border-top:2px solid #aaa;
+    padding:3px;
+  }
+  
+/* Form style
+ ****************************************************************************/  
+ form{
+    margin:10px;
  }
+   form fieldset{
+      background-color:#fafaff;
+      border:1px solid #d5d9e0;
+      margin:10px 0;
+   }
+   fieldset.actions{
+      background-color:#e3f5ce;
+      border:1px solid #c5d0c9;
+   }
+   form legend{
+      background-color:#999999;
+      color:#fffffc;
+      text-shadow:#686666 1px 1px 1px;
+      font-weight:bold;
+      padding:0.3em 0.5em;
+   }
+   form label{
+      font-weight:bold;
+      display:block;
+      padding:0.5em;
+      font-size:0.9em;
+      color:#333;
+      width:150px;
+      float:left;
+   }
+   form input, form textarea{
+      float:left;
+      padding:0.3em 0.5em;
+      font-size:0.8em;
+   }
+   form textarea{
+     height:5em;
+   }
+   
+   form select{
+      float:left;
+   }
+   
+   form span.radio_button{
+      border:1px solid #eee;
+      display:block;
+      float:left;
+      margin:2px;
+   }
+      form span.radio_button:hover{
+         background-color:#eee;
+         color:#000;
+      }
+
+   form span.radio_button label{ 
+      float:left;
+      cursor:pointer;
+      width:auto;
+      font-size:0.8em;
+   }
+   form span.radio_button input{
+      margin:5px;
+   }
+   
+   /* placeholder text color */
+   input.placeholder { color: #a9a9a9 !important; }
+   
+   /* form elements are wrapped by div */
+   form div.field{
+      clear:both;
+      display:block;
+      float:left;
+      width:99%;
+      overflow:hidden;
+      border-bottom:1px solid #eee;
+      padding:9px 0 9px 0;
+      margin:0;
+   }
+   }  

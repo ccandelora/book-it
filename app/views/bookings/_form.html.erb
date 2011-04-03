@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+<fieldset>
+  <legend>Information of the booking</legend>
   <div class="field">
     <%= f.label :tenant_id %><br />
 
@@ -61,7 +63,8 @@
     <%= f.label :status %><br />
     <%= f.text_field :status %>
   </div>
-  <div class="actions">
+  </fieldset>
+  <fieldset class="action">
     <%= f.submit %>
-  </div>
+  </fieldset>
 <% end %>

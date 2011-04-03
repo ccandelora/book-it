@@ -11,31 +11,35 @@
     </div>
   <% end %>
 
+<fieldset>
+  <legend>Information of the tenant</legend>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :address %><br />
+    <%= f.label :address %>
     <%= f.text_area :address %>
   </div>
   <div class="field">
-    <%= f.label :city %><br />
+    <%= f.label :city %>
     <%= f.text_field :city %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br />
+    <%= f.label :phone %>
     <%= f.text_field :phone %>
   </div>
   <div class="field">
-    <%= f.label :remarks %><br />
+    <%= f.label :remarks %>
     <%= f.text_area :remarks %>
   </div>
-  <div class="actions">
+</fieldset>
+<fieldset class="actions">
+
     <%= f.submit %>
-  </div>
+</fieldset>
 <% end %>
