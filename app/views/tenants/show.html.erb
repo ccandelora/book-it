@@ -1,35 +1,10 @@
-<p id="notice"><%= notice %></p>
+<%= render @tenant %>
 
-<p>
-  <b>Name:</b>
-  <%= @tenant.name %>
-</p>
+<h3>Comments</h3>
+<div id="comments">
+  <%= render @tenant.comments %>
+</div>
 
-<p>
-  <b>Address:</b>
-  <%= @tenant.address %>
-</p>
+<%= render :file => 'comments/new' %>
 
-<p>
-  <b>City:</b>
-  <%= @tenant.city %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @tenant.email %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @tenant.phone %>
-</p>
-
-<p>
-  <b>Remarks:</b>
-  <%= @tenant.remarks %>
-</p>
-
-
-<%= link_to 'Edit', edit_tenant_path(@tenant) %> |
 <%= link_to 'Back', tenants_path %>

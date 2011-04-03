@@ -7,4 +7,6 @@ class Booking < ActiveRecord::Base
   validates :status, :presence => true
 
   belongs_to :tenant
+  
+  default_scope order('bookings.start_date')
 end

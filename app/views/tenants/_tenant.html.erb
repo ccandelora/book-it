@@ -1,0 +1,36 @@
+<h1>Tenant <%= @tenant.name %></h1>
+
+<div class="actions">
+  <%= link_to "Edit", edit_tenant_path(tenant) %>
+  <%= link_to "Delete", tenant, :confirm => "Are you sure?", :method => :delete %>
+</div>  
+
+<p>
+  <b>Name:</b>
+  <%= @tenant.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @tenant.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @tenant.city %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @tenant.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @tenant.phone %>
+</p>
+
+<p>
+  <b>Remarks:</b>
+  <%= @tenant.remarks %>
+</p>
