@@ -1,0 +1,14 @@
+<div class='comment'>
+  <p>
+    <strong>On <%= comment.created_at.to_s(:long) %> <%= comment.user_id %> said:</strong>
+    <span class='actions'>
+      <%= link_to 'Delete', 
+        [@tenant, comment],
+        :confirm => 'Are you sure?', 
+        :method => :delete %>
+    </span>
+  </p>
+  <p>
+    <%= comment.body %>
+  </p>
+</div>

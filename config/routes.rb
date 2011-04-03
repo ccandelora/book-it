@@ -1,8 +1,14 @@
 Bookit::Application.routes.draw do
-  resources :tenants
+  resources :tenants do
+    resources :comments
+  end
 
   resources :bookings
 
+  resources :users
+
+  root :to => "dashboard#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -52,7 +58,7 @@ Bookit::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "dashboard#index"
+
 
   # See how all your routes lay out with "rake routes"
 

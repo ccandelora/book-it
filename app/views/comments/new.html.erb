@@ -1,0 +1,11 @@
+<% form_for([@tenant, @tenant.comments.new]) do |form| %>
+
+<%= hidden_field :tenant_id, @tenant.id%>
+
+  <div class="field">
+    <%= form.label :body %><br />
+    <%= form.text_area :body %>
+  </div>
+  
+  <%= form.submit 'Add' %>
+<% end %>
