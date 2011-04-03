@@ -3,27 +3,21 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Address</th>
     <th>City</th>
-    <th>Email</th>
     <th>Phone</th>
-    <th>Remarks</th>
-    <th></th>
-    <th></th>
+    <th>Bookings</th>
+    <th>Comments</th>
     <th></th>
   </tr>
 
 <% @tenants.each do |tenant| %>
   <tr>
-    <td><%= tenant.name %></td>
-    <td><%= tenant.address %></td>
+    <td><%= link_to tenant.name, tenant %></td>
     <td><%= tenant.city %></td>
-    <td><%= tenant.email %></td>
     <td><%= tenant.phone %></td>
-    <td><%= tenant.remarks %></td>
-    <td><%= link_to 'Show', tenant %></td>
-    <td><%= link_to 'Edit', edit_tenant_path(tenant) %></td>
-    <td><%= link_to 'Destroy', tenant, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= tenant.bookings.count.to_s + " bookings" if tenant.bookings.count > 0%></td>
+    <td><%= tenant.comments.count.to_s + " comments" if tenant.comments.count > 0 %></td>
+    <td><%= link_to 'Edit', edit_tenant_path(tenant) %> <%= link_to 'Destroy', tenant, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
