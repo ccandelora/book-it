@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @tenant.comments.new(params[:comment])
-    @comment.user_id = current_user
+    @comment.user_id = current_user.id
     if @comment.save
       redirect_to @tenant, :notice => 'Thanks for your comment'
     else
