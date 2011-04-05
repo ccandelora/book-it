@@ -6,7 +6,9 @@
     <td><%=h number_to_currency(booking.price, :precision => 0, :unit => "€")+",-" %></td>
     <td><%= booking.persons %></td>
     <td><%= booking.booking_type %></td>
-    <td><%= booking.payment %></td>
+    <td><%= booking.payment_id %></td>
     <td><%= booking.status %></td>
     <td><%= link_to 'Show', booking %>  <%= link_to 'Destroy', booking, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
+  <%#= @payment.find(booking.payment_id) %>
+  <%#= debug booking.payment %>
