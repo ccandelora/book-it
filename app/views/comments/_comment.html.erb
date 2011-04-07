@@ -1,4 +1,7 @@
 <div class='comment'>
+  <div style="width:50px;float:left;margin:10px 5px">
+    <img src="<%= gravatar_url(comment.user.email.to_s, {:size => 40}) %>" />    
+  </div>
   <p>
     <strong><%= comment.user.name %></strong> on  <%= comment.created_at.to_s(:long) %>
 

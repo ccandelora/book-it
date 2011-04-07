@@ -1,14 +1,14 @@
   <tr>
     <td><%= booking.start_date.strftime("%W") %></td>
     <td><%= link_to booking.tenant.name, booking.tenant %></td>
-    <td><%= booking.start_date.strftime("%d-%m-%y") %> - <%= booking.end_date.strftime("%d-%m-%y") %></td>
+    <td><%= link_to (booking.start_date.strftime("%d-%m-%y") + " - " +  booking.end_date.strftime("%d-%m-%y")), booking %></td>
     <td><%= distance_of_time_in_words(booking.start_date, booking.end_date) %></td>
     <td><%=h number_to_currency(booking.price, :precision => 0, :unit => "€")+",-" %></td>
     <td><%= booking.persons %></td>
     <td><%= booking.booking_type %></td>
-    <td><%= booking.payment_id %></td>
+    <td>
+      <%= Payment.find(booking.payment_id).title %>
+    </td>
     <td><%= booking.status %></td>
     <td><%= link_to 'Show', booking %>  <%= link_to 'Destroy', booking, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-  <%#= @payment.find(booking.payment_id) %>
-  <%#= debug booking.payment %>
+  </tr>  

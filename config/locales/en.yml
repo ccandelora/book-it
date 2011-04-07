@@ -28,6 +28,8 @@ en:
     type:       "Booking type"
     payment:    "Payment details"
     status:     "Status of booking"
+    period:     "Period"
+    length:     "Length"
     short:
       tenant:     "Tenant"
       start_date: "Arrival"

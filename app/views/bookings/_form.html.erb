@@ -14,53 +14,56 @@
 <fieldset>
   <legend>Information of the booking</legend>
   <div class="field">
-    <%= f.label :tenant_id %><br />
+    <%= f.label :tenant_id %>
 
-      <%= select_tag "booking[tenant_id]", 
-        options_from_collection_for_select(Tenant.all, "id", "name"), 
+      <%= f.select :tenant_id, 
+        Tenant.all.collect {|tenant| [tenant.name, tenant.id]}, 
         {
-          :include_blank  => true,
           :prompt         => true
         }
         %>
-    
-    <%# = f.text_field :tenant_id %>
-    
+  
   </div>
   <div class="field">
-    <%= f.label :start_date %><br />
+    <%= f.label :start_date %>
     <%= f.date_select :start_date, { 
       :order  => [:day, :month, :year],
+      :start_year => Time.now.year,
       :prompt => true      
     } %>
   </div>
   <div class="field">
-    <%= f.label :end_date %><br />
+    <%= f.label :end_date %>
     <%= f.date_select :end_date, { 
       :order  => [:day, :month, :year],
+      :start_year => Time.now.year,
       :prompt => true
     } %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
+    <%= f.label :price %>
+    &euro; <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :persons %><br />
-    <%= select_tag "booking[persons]",
-     (1..4).to_a  %>
-    <%= f.text_field :persons %>
+    <%= f.label :persons %>
+    <%= select_tag "booking[persons]", options_for_select( (1..10).to_a)  %>
   </div>
   <div class="field">
-    <%= f.label :booking_type %><br />
+    <%= f.label :booking_type %>
     <%= f.text_field :booking_type %>
   </div>
   <div class="field">
-    <%= f.label :payment %><br />
-    <%= f.text_field :payment %>
+    <%= f.label :payment_id %>
+    <%= f.select :payment_id, 
+        Payment.all.collect {|payment| [payment.title, payment.id]}, 
+        {
+          :prompt         => true
+        }
+        %> <%= link_to "New payment type?", :controller => "payments", :action => "new" %>
+    
   </div>
   <div class="field">
-    <%= f.label :status %><br />
+    <%= f.label :status %>
     <%= f.text_field :status %>
   </div>
   </fieldset>

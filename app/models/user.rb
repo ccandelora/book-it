@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
                        :length => { :within => 4..20 },
                        :presence => true,
                        :if => :password_required?
+  validates :email, :presence => true
+  validates :name, :presence => true
   
   has_many :comments
   

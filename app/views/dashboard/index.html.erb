@@ -1,6 +1,7 @@
-Welcome to the dashboard!
-<br />
+<h1>Welcome to the dashboard!</h1>
 
 <br />
-You can:<br />
-<%= link_to "New booking", :controller => 'bookings', :action => 'new' %><br />
+Some quicklinks:<br />
+  <%= link_to "New booking", {:controller => 'bookings', :action => 'new'}, :class => 'button' %><br />
+  <%= link_to "New tenant", {:controller => 'tenants', :action => 'new'}, :class => 'button' %><br />
+  
