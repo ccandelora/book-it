@@ -1,0 +1,17 @@
+<h1>New payment type</h1>
+
+<p class="info">
+  Current payment types are 
+  <% @payments.each do |payment| %>
+    <strong><%= payment.title %></strong>
+    <%= h "," if !@payments.last %>
+    
+  <% end %>
+</p>
+<%= render 'form' %>
+
+
+
+
+
+<%= link_to 'Back', bookings_path %>

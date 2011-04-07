@@ -6,6 +6,7 @@ Bookit::Application.routes.draw do
 
   resources :bookings
   resources :users
+  resources :payments
   resource :session
   
   match '/login' => "sessions#new", :as => "login"
