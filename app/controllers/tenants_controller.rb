@@ -1,6 +1,9 @@
 class TenantsController < ApplicationController
   
   before_filter :authenticate
+
+  add_breadcrumb "Tenants", :tenants_path
+  
   # GET /tenants
   # GET /tenants.xml
   def index
@@ -16,7 +19,8 @@ class TenantsController < ApplicationController
   # GET /tenants/1.xml
   def show
     @tenant = Tenant.find(params[:id])
-
+    add_breadcrumb @tenant.name, :tenants_path
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @tenant }

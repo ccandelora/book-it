@@ -2,6 +2,8 @@ class BookingsController < ApplicationController
   
   before_filter :authenticate
 
+  add_breadcrumb "Bookings", :bookings_path
+  
   def index
     @bookings = Booking.all
 
