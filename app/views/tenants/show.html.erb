@@ -1,10 +1,13 @@
 <%= render @tenant %>
 
-<h3>Comments</h3>
+<div id="tenant_bookings">
+  <h1>Bookings</h1>
+  <%= render :partial => 'tenants/booking', :collection => @tenant.bookings %>
+</div>
+
 <div id="comments">
+  <h1>Comments</h1>
   <%= render @tenant.comments %>
 </div>
 
 <%= render :file => 'comments/new' %>
-
-<%= link_to 'Back', tenants_path %>

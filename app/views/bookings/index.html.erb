@@ -1,21 +1,18 @@
-<%# TODO: Create a partial for this %>
 <h1><%= t '.title' %></h1>
 
 <table>
   <tr>
-    <th>Week</th>
-    <th><%= t 'booking.tenant' %></th>
     <th><%= t 'booking.period' %></th>
-    <th><%= t 'booking.length' %></th>
-    <th><%= t 'booking.price' %></th>
+    <th><%= t 'booking.tenant' %></th>
     <th><%= t 'booking.short.persons' %></th>    
     <th><%= t 'booking.short.type' %></th>
     <th><%= t 'booking.short.payment' %></th>
     <th><%= t 'booking.short.status' %></th>
-    <th></th>
   </tr>
 <%= render @bookings %>
 </table>
 <br />
 
-<%= link_to 'New Booking', new_booking_path %>
+<% content_for :aside do %>
+<%= link_to 'New Booking', new_booking_path, {:class => 'button'} %>
+<% end %>

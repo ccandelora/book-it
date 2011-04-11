@@ -2,44 +2,47 @@
 
 <div id="tenant" style="overflow:hidden;">
   
-  <div style="width:100px;float:left;">
+  <div id="tenant_picture">
     <img src="<%= gravatar_url(@tenant.email) %>" />
-
     <div class="actions">
       <%= link_to "Edit", edit_tenant_path(tenant) %>
       <%= link_to "Delete", tenant, :confirm => "Are you sure?", :method => :delete %>
-    </div>  
+    </div>
   </div>
-  <div style="float:left;">
-    <p>
-      <b>Name:</b>
-      <%= @tenant.name %>
-    </p>
+  
+  <div id="tenant_data">
+    
+    <table>
+      <tr>
+        <th>Name:</th>
+        <td><%= @tenant.name %></td>
+      </tr>
 
-    <p>
-      <b>Address:</b>
-      <%= @tenant.address %>
-    </p>
+    <tr>
+      <th>Address:</th>
+      <td><%= @tenant.address %></td>
+    </tr>
 
-    <p>
-      <b>City:</b>
-      <%= @tenant.city %>
-    </p>
+    <tr>
+      <th>City:</th>
+      <td><%= @tenant.city %></td>
+    </tr>
 
-    <p>
-      <b>Email:</b>
-      <%= @tenant.email %>
-    </p>
+    <tr>
+      <th>Email:</th>
+      <td><%= @tenant.email %></td>
+    </tr>
 
-    <p>
-      <b>Phone:</b>
-      <%= @tenant.phone %>
-    </p>
+    <tr>
+      <th>Phone:</th>
+      <td><%= @tenant.phone %></td>
+    </tr>
 
-    <p>
-      <b>Remarks:</b>
-      <%= @tenant.remarks %>
-    </p>
+    <tr>
+      <th>Remarks:</th>
+      <td><%= @tenant.remarks %></td>
+    </tr>
+  </table>
 
   </div>
 </div>

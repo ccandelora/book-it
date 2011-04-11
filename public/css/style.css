@@ -85,6 +85,7 @@ a:hover { color: #036; }
   body{
     font-family:"Helvetica Neue", Arial, Verdana, sans-serif;
     font-size:14px;
+       background-color:#f2f2f2;
   }
   table{
     border:1px solid #ccc;
@@ -116,47 +117,36 @@ a:hover { color: #036; }
 /* Layout
  ****************************************************************************/
  #container{
-   width:95%;
-   margin:10px auto;
-/*   background-color:#f2f2f2;*/
+
  }
   header{
-    
+    background-color:#9B9E8E;
+    padding:10px 0 0 0;
   }
   header h1{
-    font-family: 'Pacifico', serif;
-    font-size: 36px;
+    font-family: 'Lucida Grande', arial, sans-serif;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     text-shadow: none;
     word-spacing: 0em;
     line-height: 1.2;
-    margin-left:10px;
+    margin-left:20px;
+    padding-right:20px;
     display:inline;
+    color:#fff;
   }
   header em{
-
     font-style:italic;
     font-size:14px;
     display:inline;
   }
-  section{
-    overflow:hidden;
-  }  
-  section h1{
-    font-family: 'Bentham', serif;
-    font-size: 26px;
-    font-weight:400;
-  }
-  footer{
 
-    padding:3px;
-  }
+
   nav#primary{
-    border-bottom:2px solid #8B8C58;
     overflow:hidden;
     margin-top:5px;
-    padding-left:5px;
+    padding-left:15px;
   }
     nav#primary li{
       display:inline;
@@ -168,16 +158,19 @@ a:hover { color: #036; }
       display:block;
       float:left;
       border:1px solid #;
-      background-color:#8B8C58;
-      background-color:#94A653;
+      background-color:#504840;
       color:#D9D055;
       color:#333;
+      color:#eee;
       font-size:14px;
       text-decoration:none;
       font-weight:bold;
     }
     nav#primary a:hover{
-      background-color:#B3CFF2;
+      background-color: rgba(139,140,88, 0.8)
+    }
+    nav#primary a.active{
+      background-color:#f2f2f2;
     }
   
   nav#userinfo{
@@ -187,43 +180,95 @@ a:hover { color: #036; }
     width:95%;
   }
   
+  
   #main{
-    background-color:#fff;
-/*    background-color:rgba(255,255,255,0.8);*/
-    border:2px solid #8B8C58;
-    border-top:0;
     padding:10px;
-    box-shadow:5px 5px 5px rgba(155,155,155,0.2);;
+    overflow:hidden;
+  }  
+  article{
+    background-color:#fff;
+    border:1px solid #e5e5e5;
+    padding:10px;
+    box-shadow:5px 5px 5px rgba(155,155,155,0.6);
+    overflow:hidden;
+    width:75%;
+    float:left;
+    margin:10px 5px;
+  }  
+    article h1{
+    font-family: 'Lucida Grande', arial, sans-serif;
+      font-size: 18px;
+      font-weight:400;
+      background-color:#EDF3FE;
+      padding:6px 10px;
+    }
+    
+
+  aside{
+    float:right;
+    width:20%;
   }
+
+    
+  footer{
+    padding:3px;
+  }
+  
+
+/* Page specifics */
   
   #tenant{
     border:2px solid #aaa;
     padding:5px;
+    float: left;
+width: 50%;
+border: 4px solid #CCC;
+padding: 10px;
+margin: 10px;
+-webkit-border-radius: 10px;
   }
+    #tenant_picture{
+      float:left;
+      width:100px;
+
+    }
+    #tenant_picture img{
+      width:100px;
+      height:100px;
+      border:1px solid #e2e2e2;
+    }
+    #tenant_data{
+      float:left;
+      margin-left:10px;
+      
+    }
   #tenant p b{
     display:block;
     width:100px;
     float:left;
   }
+  #tenant_bookings{
+    padding:10px 0;
+    float:right;
+    width:40%;
+  }
   #comments{
-
+    clear:both;
   }
   .comment{
     border-top:1px solid #ccc;
     overflow:hidden;
   }
   .comment .actions{
-    
-
+  
   }
+  
 
 /* Login layout
  ****************************************************************************/  
   
-  #page-login,
-  body{
+  #page-login{
     background:url(../img/background-login.jpg) no-repeat fixed bottom left;
-
   }
   #page-login section{
     width:50%;
