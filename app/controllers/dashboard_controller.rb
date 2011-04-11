@@ -2,7 +2,13 @@ class DashboardController < ApplicationController
 
   before_filter :authenticate
   def index
+    @month = (params[:month] || (Time.zone || Time).now.month).to_i
+    @year = (params[:year] || (Time.zone || Time).now.year).to_i
 
+    @shown_month = Date.civil(@year, @month)
+
+    @first_day_of_week = 0
+    @event_strips = Booking.event_strips_for_month(@shown_month, @first_day_of_week)
   end
 
 end

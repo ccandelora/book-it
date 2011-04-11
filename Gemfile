@@ -11,6 +11,8 @@ gem 'breadcrumbs_on_rails'
 
 gem 'jquery-rails','>=0.2.6'
 
+gem 'event-calendar', :require => 'event_calendar'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

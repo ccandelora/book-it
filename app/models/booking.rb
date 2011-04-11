@@ -1,4 +1,6 @@
 class Booking < ActiveRecord::Base
+  has_event_calendar :start_at_field  => 'start_date', :end_at_field => 'end_date'
+  
   validates :tenant_id, :presence => true
   validates :start_date, :presence => true
   validates :end_date, :presence => true
