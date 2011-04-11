@@ -27,13 +27,16 @@
 </head>
 <body id="page-login">
   <div id="container">
-    <header>Book It - a simple reservation manager</header>
+    <header>
+      <h1>Book it!</h1><em>a simple reservation manager</em>
+    </header>
+
   	<div id="main" role="main">  
-      <section>
+      <article>
         <%= content_tag :p, notice, :class => 'notice' if notice.present? %>
         <%= content_tag :p, alert, :class => 'alert' if alert.present? %>    
         <%= yield %>
-      </section>
+      </article>
     </div>
     <footer>
       Book It is created by <a href="http://twitter.com/lekkerduidelijk">@lekkerduidelijk</a> - <%= l Time.now %>
