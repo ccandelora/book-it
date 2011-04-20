@@ -1,14 +1,20 @@
 Bookit::Application.routes.draw do
   root :to => "dashboard#index"  
+
+  # Main application controllers
   resources :tenants do
     resources :comments
   end
-
   resources :bookings
   resources :users
-  resources :payments
-  resource :session
   
+  
+  # Settings
+  resources :settings
+  resources :payments
+
+  # Authentication
+  resource :session
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
 

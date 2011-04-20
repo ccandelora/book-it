@@ -1,6 +1,6 @@
 $(function(){
 
-  $("#primary").each(function(){
-    console.log(this);
-  })
+  // $("#primary").each(function(){
+  //   console.log(this);
+  // })
 });

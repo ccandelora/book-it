@@ -5,6 +5,7 @@ class Booking < ActiveRecord::Base
   validates :start_date, :presence => true
   validates :end_date, :presence => true
   validates :price, :presence => true
+  validates :payment_id, :presence => true  
   validates :persons, :presence => true
   validates :status, :presence => true
 

@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+  
 <fieldset>
   <legend>Information of the booking</legend>
   <div class="field">
@@ -26,7 +27,11 @@
   </div>
   <div class="field">
     <%= f.label :start_date %>
-    <%= f.date_select :start_date, { 
+    <div id="pick_start_date"></div>
+    <%#= f.text_field :start_date %>
+    <%= f.hidden_field :start_date %>
+  
+    <%#= f.date_select :start_date, { 
       :order  => [:day, :month, :year],
       :start_year => Time.now.year,
       :prompt => true      
@@ -34,12 +39,19 @@
   </div>
   <div class="field">
     <%= f.label :end_date %>
-    <%= f.date_select :end_date, { 
+    <%#= f.text_field :end_date %>
+    <div id="pick_end_date"></div>    
+    <%= f.hidden_field :end_date %>
+    <%#= f.date_select :end_date, { 
       :order  => [:day, :month, :year],
       :start_year => Time.now.year,
       :prompt => true
     } %>
   </div>
+  <div class="field">
+    <label>Period</label>
+    <div id="date-period">0</div>
+  </div>  
   <div class="field">
     <%= f.label :price %>
     &euro; <%= f.text_field :price %>
@@ -67,7 +79,81 @@
     <%= f.text_field :status %>
   </div>
   </fieldset>
-  <fieldset class="action">
+  <fieldset class="actions">
     <%= submit_or_cancel(f) %>
   </fieldset>
 <% end %>
+<script type="text/javascript">
+//  $('#booking_start_date').datePicker()
+//  $('#booking_end_date').datePicker()
+  
+
+// 
+// $(function()
+// {
+//   $('#booking_start_date').datePicker()
+//   $('#booking_end_date').datePicker()
+//   
+//  $('#booking_start_date').bind(
+//    'dpClosed',
+//    function(e, selectedDates)
+//    {
+//      var d = selectedDates[0];
+//      if (d) {
+//        d = new Date(d);
+//        $('#booking_end_date').dpSetStartDate(d.addDays(1).asString());
+//      }
+//    }
+//  );
+//  $('#booking_end_date').bind(
+//    'dpClosed',
+//    function(e, selectedDates)
+//    {
+//      var d = selectedDates[0];
+//      if (d) {
+//        d = new Date(d);
+//        $('#booking_start_date').dpSetEndDate(d.addDays(-1).asString());
+//      }
+//    }
+//  );
+// });
+
+$(function()
+{
+  $('#pick_start_date')
+		.datePicker({inline:true})
+		.bind(
+			'dateSelected',
+			function(e, selectedDate, $td)
+			{
+				$('#booking_start_date').val(selectedDate.asString());
+				$('#pick_end_date').dpSetSelected(selectedDate.addDays(7).asString());
+				setDateDifference()
+			}
+		);
+	$('#pick_end_date')
+		.datePicker({inline:true})
+		.bind(
+			'dateSelected',
+			function(e, selectedDate, $td)
+			{
+				$('#booking_end_date').val(selectedDate.asString());
+				
+				setDateDifference()
+		  }
+	  );
+})
+function setDateDifference(){
+  console.log('hi');
+  var start_date = $('#booking_start_date').val();
+  var end_date = $('#booking_end_date').val();
+  console.log(start_date + " - " + end_date);
+//  $('#date-period').val(end_date-start_date );
+
+}
+  
+  
+  
+  
+</script>
+
