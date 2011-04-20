@@ -29,4 +29,17 @@ class UsersController < ApplicationController
       render :action => 'edit'
     end
   end
+  
+  def destroy
+    @user = User.find(params[:id])
+    
+    if @user == current_user
+      redirect_to settings_path, :alert => 'You can not delete your self!'
+    else
+      @user.destroy
+      redirect_to settings_path, :notice => 'User was deleted.'
+    end
+    
+  end
+  
 end

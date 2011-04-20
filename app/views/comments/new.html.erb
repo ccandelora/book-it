@@ -2,12 +2,14 @@
 
   <fieldset>
     <legend>Leave a comment</legend>
+    <div class="avatar">
+      <img src="<%= gravatar_url(current_user.email.to_s, {:size => 55}) %>" />    
+    </div>
     <div class="field">
-      <%= form.label :body %>
       <%= form.text_area :body %>
     </div>
   </fieldset>
-  <fieldset class="action">
+  <fieldset class="actions">
     <%= form.submit 'Add' %>
   </fieldset>
 <% end %>

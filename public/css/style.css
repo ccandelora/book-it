@@ -99,6 +99,7 @@ a:hover { color: #036; }
     }
     table th{
       background-color:#e2e2e2;
+      text-align:left;
     }
 
   p.notice, p.alert{
@@ -112,7 +113,14 @@ a:hover { color: #036; }
   p.alert{
     border-color:#df9c9c;
     background-color:#ffcccc;
-  } 
+  }
+  a.delete, a.cancel{
+    color:#cc0000;
+  }
+  a.delete:hover, a.cancel:hover{
+    background-color:#cc0000;
+    color:#fff;
+  }
 
 /* Layout
  ****************************************************************************/
@@ -184,6 +192,7 @@ a:hover { color: #036; }
   #main{
     padding:10px;
     overflow:hidden;
+    min-width:800px;
   }  
   article{
     background-color:#fff;
@@ -218,16 +227,18 @@ a:hover { color: #036; }
   
 
 /* Page specifics */
-  
+
+
+/* Tenant styling */  
   #tenant{
     border:2px solid #aaa;
     padding:5px;
     float: left;
-width: 50%;
-border: 4px solid #CCC;
-padding: 10px;
-margin: 10px;
--webkit-border-radius: 10px;
+    width: 50%;
+    border: 4px solid #CCC;
+    padding: 10px;
+    margin: 10px;
+    -webkit-border-radius: 10px;
   }
     #tenant_picture{
       float:left;
@@ -254,24 +265,78 @@ margin: 10px;
     float:right;
     width:40%;
   }
+
   #comments{
     clear:both;
   }
-  .comment{
-    border-top:1px solid #ccc;
-    overflow:hidden;
-  }
-  .comment .actions{
+    .comment{
+      border-top:1px solid #ccc;
+      padding:10px 0;
+      overflow:hidden;
+    }
+    .comment .actions{
   
-  }
+    }
+    .comment .avatar{
+      width:55px;
+      float:left;
+      height:55px;
+      border:1px solid #ccc;
+      margin-right:15px;
+    }
+    .comment .comment_info{
+      font-size:12px;
+    }
+    .comment .comment_body{
+      padding:5px 0;
+    }
+    #new_comment{
+      padding:10px 0;
+      border-top:1px solid #ccc;
+    }
+      #new_comment legend{
+        display:block;
+      }
+      #new_comment .avatar{
+        float:left;
+        width:55px;
+        height:55px;
+        border:1px solid #ccc;
+        margin-top:10px;
+
+      }
+      #new_comment .field{
+        float:left;
+        width:80%;
+        margin-left:10px;        
+        clear:none;
+        margin-top:0px;
+        border:0;
+      }
+      #new_comment .action{
+        padding-left:60px;
+      }      
   
+/** Bookings styling */
+#booking_start_date,
+#booking_end_date{
+  width:90px;
+}
+#pick_start_date,
+#pick_end_date{
+  margin-left:150px;
+}
+
+/* Settings styling */
+
+  section.settings{
+    padding:10px;
+  }
 
 /* Login layout
  ****************************************************************************/  
   
-  #page-login{
-    background:url(../img/background-login.jpg) no-repeat fixed bottom left;
-  }
+
   #page-login article{
     width:400px;
     overflow:hidden;
@@ -300,15 +365,26 @@ margin: 10px;
 /* Form style
  ****************************************************************************/  
  form{
-    margin:10px;
+/*    margin:10px;*/
  }
    form fieldset{
      background-color:#fff;
       margin:10px 0;
    }
    fieldset.actions{
-
+     padding-left:160px;
    }
+    fieldset.actions .cancel{
+      float:left;
+      display:block;
+      margin:8px 2px;
+      padding:2px;
+    }
+    fieldset.actions span{
+      float:left;
+      display:block;
+      margin:10px 2px;
+    }
    form legend{
      background-color:#fff;
      font-weight:bold;
@@ -380,6 +456,8 @@ margin: 10px;
     
   }
   
+  
+  /* Cool button style, kindly lend from github.com/michieldegraaf */
   button,
   a.button,
   input[type="submit"]{
@@ -410,13 +488,21 @@ margin: 10px;
     -moz-box-shadow: inset 0 1px 0 hsla(0,100%,100%,.5),inset 0 0 2px hsla(0,100%,100%,.1),0 1px 0 hsla(0, 100%, 100%, .7);
     box-shadow: inset 0 1px 0 hsla(0,100%,100%,.5),inset 0 0 2px hsla(0,100%,100%,.1),0 1px 0 hsla(0, 100%, 100%, .7);
   }
+    button:hover,
     a.button:hover,
     input[type="submit"]:hover{
       color:#888;
       background:-webkit-gradient(linear,left top,left bottom,color-stop(.25, #fff),color-stop(1, #eee));
       background:-moz-linear-gradient(center top,#fff 25%,#eee 100%);
     }
-
+    button:active,
+    a.button:active,
+    input[type="submit"]:active{
+      box-shadow:inset 0 1px 1px #ddd;
+      text-shadow:0 -1px #fff;
+      background:-webkit-gradient(linear,left top,left bottom,color-stop(.25, #eee),color-stop(1, #fff));
+      background:-moz-linear-gradient(center top,#eee 25%,#fff 100%);
+    }
 
 
 
@@ -463,7 +549,136 @@ margin: 10px;
   }
 
 
+/* Datepicker jQuery CSS
+ ****************************************************************************/
 
+  table.jCalendar {
+  	border: 1px solid #000;
+  	background: #aaa;
+      border-collapse: separate;
+      border-spacing: 2px;
+  }
+  table.jCalendar th {
+  	background: #333;
+  	color: #fff;
+  	font-weight: bold;
+  	padding: 3px 5px;
+  }
+
+  table.jCalendar td {
+  	background: #ccc;
+  	color: #000;
+  	padding: 3px 5px;
+  	text-align: center;
+  }
+  table.jCalendar td.other-month {
+  	background: #ddd;
+  	color: #aaa;
+  }
+  table.jCalendar td.today {
+  	background: #666;
+  	color: #fff;
+  }
+  table.jCalendar td.selected {
+  	background: #f66;
+  	color: #fff;
+  }
+  table.jCalendar td.selected.dp-hover {
+  	background: #f33;
+  	color: #fff;
+  }
+  table.jCalendar td.dp-hover,
+  table.jCalendar tr.activeWeekHover td {
+  	background: #fff;
+  	color: #000;
+  }
+  table.jCalendar tr.selectedWeek td {
+  	background: #f66;
+  	color: #fff;
+  }
+  table.jCalendar td.disabled, table.jCalendar td.disabled.dp-hover {
+  	background: #bbb;
+  	color: #888;
+  }
+  table.jCalendar td.unselectable,
+  table.jCalendar td.unselectable:hover,
+  table.jCalendar td.unselectable.dp-hover {
+  	background: #bbb;
+  	color: #888;
+  }
+
+  /* For the popup */
+
+  /* NOTE - you will probably want to style a.dp-choose-date - see how I did it in demo.css */
+
+  div.dp-popup {
+  	position: relative;
+  	background: #ccc;
+  	font-size: 10px;
+  	font-family: arial, sans-serif;
+  	padding: 2px;
+  	width: 200px;
+  	line-height: 1.2em;
+  }
+  div#dp-popup {
+  	position: absolute;
+  	z-index: 199;
+  }
+  div.dp-popup h2 {
+  	font-size: 12px;
+  	text-align: center;
+  	margin: 2px 0;
+  	padding: 0;
+  }
+  a#dp-close {
+  	font-size: 11px;
+  	padding: 4px 0;
+  	text-align: center;
+  	display: block;
+  }
+  a#dp-close:hover {
+  	text-decoration: underline;
+  }
+  div.dp-popup a {
+  	color: #000;
+  	text-decoration: none;
+  	padding: 3px 2px 0;
+  }
+  div.dp-popup div.dp-nav-prev {
+  	position: absolute;
+  	top: 2px;
+  	left: 4px;
+  	width: 100px;
+  }
+  div.dp-popup div.dp-nav-prev a {
+  	float: left;
+  }
+  /* Opera needs the rules to be this specific otherwise it doesn't change the cursor back to pointer after you have disabled and re-enabled a link */
+  div.dp-popup div.dp-nav-prev a, div.dp-popup div.dp-nav-next a {
+  	cursor: pointer;
+  }
+  div.dp-popup div.dp-nav-prev a.disabled, div.dp-popup div.dp-nav-next a.disabled {
+  	cursor: default;
+  }
+  div.dp-popup div.dp-nav-next {
+  	position: absolute;
+  	top: 2px;
+  	right: 4px;
+  	width: 100px;
+  }
+  div.dp-popup div.dp-nav-next a {
+  	float: right;
+  }
+  div.dp-popup a.disabled {
+  	cursor: default;
+  	color: #aaa;
+  }
+  div.dp-popup td {
+  	cursor: pointer;
+  }
+  div.dp-popup td.disabled {
+  	cursor: default;
+  }
 
 /* Accessibility and misc
  ****************************************************************************/

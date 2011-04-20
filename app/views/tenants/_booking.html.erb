@@ -1,7 +1,10 @@
-<hr>
-  <h2><%= link_to "Week " + booking.start_date.strftime("%W"), booking %> 
-      (<%= booking.start_date.strftime("%d-%m") + " - " +  booking.end_date.strftime("%d-%m") %>)
-  </h2>
-  <p><%= booking.persons %> persons -  
-    '<%= Payment.find(booking.payment_id).title %>' and '<%= booking.status %>'.
-  </p>
+  <li>
+    <strong>
+    <%= link_to "Week " + booking.start_date.strftime("%W"), booking %> 
+    <%= booking.start_date.strftime("%e %b %Y") + " till " +  booking.end_date.strftime("%e %b %Y") %>
+    </strong>
+    <p>
+      <%= h number_to_currency(booking.price, :precision => 0, :unit => "€")+",-" %>  
+      '<%= Payment.find(booking.payment_id).title %>' and '<%= booking.status %>'.
+    </p>
+  </li>

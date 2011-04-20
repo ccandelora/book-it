@@ -19,7 +19,7 @@ class TenantsController < ApplicationController
   # GET /tenants/1.xml
   def show
     @tenant = Tenant.find(params[:id])
-    add_breadcrumb @tenant.name, :tenants_path
+    add_breadcrumb @tenant.name, :tenant_path
     
     respond_to do |format|
       format.html # show.html.erb
@@ -31,7 +31,8 @@ class TenantsController < ApplicationController
   # GET /tenants/new.xml
   def new
     @tenant = Tenant.new
-
+    add_breadcrumb "New", ''
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @tenant }
@@ -41,6 +42,9 @@ class TenantsController < ApplicationController
   # GET /tenants/1/edit
   def edit
     @tenant = Tenant.find(params[:id])
+    add_breadcrumb @tenant.name, :tenant_path
+    add_breadcrumb "Edit", nil
+    
   end
 
   # POST /tenants

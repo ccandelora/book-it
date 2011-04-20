@@ -1,45 +1,48 @@
+
 <h1>Show booking</h1>
 
-<p>
-  <b>Tenant:</b>
-  <%= @booking.tenant.name %>
-</p>
 
-<p>
-  <b>Start date:</b>
-  <%= @booking.start_date %>
-</p>
+  <div id="booking_details">
+    <table>
+      <tr>
+        <th>Tenant:</th>
+        <td><%= link_to @booking.tenant.name, @booking.tenant %></td>
+      </tr>
+      <tr>
+        <th>Periode:</th>
+        <td>
+          <%= @booking.start_date.strftime("%d-%b-%Y") %> till
+          <%= @booking.end_date.strftime("%d-%b-%Y") %>
+          <em>(<%= distance_of_time_in_words(@booking.start_date, @booking.end_date) %>)</em>
+        </td>
+      </tr>
+      
+      <tr>
+        <th>Price:</th>
+        <td><%= h number_to_currency(@booking.price, :precision => 0, :unit => "€")+",-" %></td>
+      </tr>
 
-<p>
-  <b>End date:</b>
-  <%= @booking.end_date %>
-</p>
+      <tr>
+        <th>Persons:</th>
+        <td><%= @booking.persons %></td>
+      </tr>
 
-<p>
-  <b>Price:</b>
-  <%= @booking.price %>
-</p>
+      <tr>
+        <th>Type:</th>
+        <td><%= @booking.booking_type %></td>
+      </tr>
+      <tr>
+        <th>Payment:</th>
+        <td><%= Payment.find(@booking.payment_id).title %></td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td><%= @booking.status %></td>
+      </tr>
 
-<p>
-  <b>Persons:</b>
-  <%= @booking.persons %>
-</p>
-
-<p>
-  <b>Type:</b>
-  <%= @booking.booking_type %>
-</p>
-
-<p>
-  <b>Payment:</b>
-  <%= @booking.payment_id %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @booking.status %>
-</p>
+    </table>
+</div>
 
 
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Back', bookings_path %>
+<%= link_to 'Delete', @booking, :confirm => "Are you sure?", :method => :delete %>

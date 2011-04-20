@@ -1,21 +1,22 @@
-<div class='comment'>
-  <div style="width:50px;float:left;margin:10px 5px">
-    <img src="<%= gravatar_url(comment.user.email.to_s, {:size => 40}) %>" />    
+<div class="comment">
+  <div class="avatar">
+    <img src="<%= gravatar_url(comment.user.email.to_s, {:size => 55}) %>" />    
   </div>
-  <p>
+  <p class="comment_info">
     <strong><%= comment.user.name %></strong> on  <%= comment.created_at.to_s(:long) %>
 
     <% if comment.owned_by? current_user %>
     <span class='actions'>
-      <%= link_to '(delete?)', 
+      <%= link_to 'delete', 
         [@tenant, comment],
         :confirm => 'Are you sure?', 
-        :method => :delete %> 
+        :method => :delete,
+        :class => 'delete' %> 
     </span>
     <% end %>
 
   </p>
-  <p>
+  <p class="comment_body">
     <%= comment.body %>
   </p>
 </div>

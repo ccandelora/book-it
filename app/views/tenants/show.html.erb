@@ -1,8 +1,10 @@
 <%= render @tenant %>
 
 <div id="tenant_bookings">
-  <h1>Bookings</h1>
-  <%= render :partial => 'tenants/booking', :collection => @tenant.bookings %>
+  <h1>Bookings (<%= @tenant.bookings.count %>)</h1>
+  <ul>
+    <%= render :partial => 'tenants/booking', :collection => @tenant.bookings %>
+  </ul>
 </div>
 
 <div id="comments">
@@ -11,3 +13,7 @@
 </div>
 
 <%= render :file => 'comments/new' %>
+
+<% content_for :aside do %>
+<%= link_to 'New Tenant', new_tenant_path, {:class => 'button'} %>
+<% end %>

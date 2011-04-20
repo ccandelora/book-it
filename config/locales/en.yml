@@ -18,6 +18,7 @@ en:
     dashboard:  "Dashboard"
     tenants:    "Tenants"
     bookings:   "Bookings"
+    settings:   "Settings"
 
   booking:
     tenant:     "Tenant"
