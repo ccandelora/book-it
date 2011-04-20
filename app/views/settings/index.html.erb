@@ -1,0 +1,32 @@
+<h1>Settings</h1>
+
+  <p>
+    Here are some applicationwide settings.
+  </p>
+  
+  <h1>Payment type <span style="font-size:12px"><%= link_to "new payment", :controller => "payments", :action => "new" %></span></h1>
+
+  <section class="settings">
+    Current payment types are
+    <ul>
+    <% @payments.each do |payment| %>
+      <li><%= payment.title %></li>
+    <% end %>
+    </ul>
+    
+  </section>
+  
+  <h1>Users <span style="font-size:12px"><%= link_to "New user", :controller => "users", :action => "new" %></span></h1>
+  <section class="settings">
+    <ul>
+    <% @users.each do |user| %>
+      <li><%= user.name %> - <%= user.username %> -
+        <%= h "This is you" if  user == current_user %>
+        <%= link_to 'delete', user, :confirm => "Are you sure?", :method => :delete, :class => 'delete' if user != current_user %>
+      </li>
+    <% end %>
+    </ul>
+
+  </section>
+  
+  <h1>Locale</h1>
