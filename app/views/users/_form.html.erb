@@ -23,15 +23,23 @@
   
   <div class="field">
     <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>  
+    <%= f.text_field :username, :size => 14 %>
+  </div>
+  <div class="field">
+    <%= f.label :account_type %>
+    <% if is_admin? %>
+      <%= f.select(:account_type, [['User',0], ['Admin',1]])  %>
+    <% else %>
+      <%= @user.pretty_user(@user) %>
+    <% end %>
+  </div>    
   <div class="field">
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, :size => 12 %>
   </div>
   <div class="field">
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, :size =>12 %>
   </div>
   </fieldset>
   <fieldset class="actions">

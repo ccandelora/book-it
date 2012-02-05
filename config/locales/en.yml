@@ -19,6 +19,7 @@ en:
     tenants:    "Tenants"
     bookings:   "Bookings"
     settings:   "Settings"
+    users:      "Users"
 
   booking:
     tenant:     "Tenant"
@@ -40,3 +41,19 @@ en:
       type:       "Type"
       payment:    "Payment"
       status:     "Status"
+  users:
+    index:
+      title: "Overview of users"
+  
+  user:
+    name:         "Name"
+    email:        "Email"
+    account_type: "Account type"
+    
+  login:
+    login:        "Login"
+    username:     "Username"
+    password:     "Password"
+    msg:
+      loginsuccess: "You are logged in"
+      invalidcredentials: "Invalid username and password combination"

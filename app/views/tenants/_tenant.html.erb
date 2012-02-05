@@ -1,47 +1,30 @@
-<h1>Tenant <%= @tenant.name %></h1>
+<!--
+<h1>Tenant <%= @tenant.name %> <span class="headactions">
+    </span>
+</h1>
+-->
+<%= link_to "Edit", edit_tenant_path(tenant) %> |
+<%= link_to "Delete", tenant, :confirm => "Are you sure?", :method => :delete %>
 
 <div id="tenant" style="overflow:hidden;">
   
-  <div id="tenant_picture">
+  <div id="tenant_title">
     <img src="<%= gravatar_url(@tenant.email) %>" />
-    <div class="actions">
-      <%= link_to "Edit", edit_tenant_path(tenant) %>
-      <%= link_to "Delete", tenant, :confirm => "Are you sure?", :method => :delete %>
-    </div>
+    <h2><%= @tenant.name %></h2>
+    <p>
+      T: <%= @tenant.phone %><br>
+      E: <%= @tenant.email %>
+    </p>
   </div>
   
   <div id="tenant_data">
-    
-    <table>
-      <tr>
-        <th>Name:</th>
-        <td><%= @tenant.name %></td>
-      </tr>
-      <tr>
-        <th>Address:</th>
-        <td><%= @tenant.address %></td>
-      </tr>
-
-      <tr>
-        <th>City:</th>
-        <td><%= @tenant.city %></td>
-      </tr>
-
-      <tr>
-        <th>Email:</th>
-        <td><%= @tenant.email %></td>
-      </tr>
-
-      <tr>
-        <th>Phone:</th>
-        <td><%= @tenant.phone %></td>
-      </tr>
-
-      <tr>
-        <th>Remarks:</th>
-        <td><%= @tenant.remarks %></td>
-      </tr>
-    </table>
-
+    <figure>
+      <a id="tenant_map" href="http://maps.google.com/maps?q=<%= @tenantmapurl %>" target="_blank"><img src="https://maps.google.com/maps/api/staticmap?visible=<%= @tenant.city %>+&amp;size=190x90&amp;sensor=false&amp;maptype=terrain&amp;markers=size:small|color:red|<%= @tenantmapurl %>" border="0"></a>
+    </figure>
+    <strong><%= @tenant.address %><br>
+    <%= @tenant.city %></strong><br>
+    <a href="http://maps.google.nl/?q=<%= @tenant.address %>+<%= @tenant.city %>">Google map</a>
+    <br><br>
+    <em><%= @tenant.remarks %></em>
   </div>
 </div>

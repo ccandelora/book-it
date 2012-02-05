@@ -2,7 +2,20 @@ class UsersController < ApplicationController
   
   before_filter :authenticate
   
+  add_breadcrumb "Users", :users_path
+    
+  def index
+    @users = User.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @users }
+    end
+  end
+
+  
   def new
+    add_breadcrumb "New", :users_path
     @user = User.new
   end
   
@@ -16,15 +29,30 @@ class UsersController < ApplicationController
   end
   
   def edit
-    # Allow user to only edit himself
-    @user = current_user
+
+    if is_admin?
+      # Admin can edit all users
+      @user = User.find(params[:id])
+    else
+      # Allow user to only edit himself      
+      @user = current_user
+    end
+
   end
   
   def update
-    # Always write user credentials of current user
-    @user = current_user
+
+    # if admin allow all users editable, 
+    # else only edit current_user
+      
+    if is_admin?
+      @user = User.find(params[:id])
+    else 
+      @user = current_user
+    end
+    
     if @user.update_attributes(params[:user])
-      redirect_to bookings_path, :notice => 'Updated user information successfully.'
+      redirect_to users_path, :notice => 'Updated user information successfully.'
     else
       render :action => 'edit'
     end

@@ -8,7 +8,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-  <title>BookIt!</title>
+  <title>BookIt! ~ a simple reservation manager</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 	
@@ -20,9 +20,6 @@
 	<link rel="stylesheet" href="/css/style.css?v=2">
 	<link rel="stylesheet" media="handheld" href="/css/handheld.css?v=2">
 	<script src="/js/libs/modernizr-1.7.min.js"></script>
-  <!--
-  <link  href="http://fonts.googleapis.com/css?family=Bentham:regular" rel="stylesheet" type="text/css" >
-  -->
 	
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
@@ -37,20 +34,20 @@
 <body>
   <div id="container">
     <header>
-      <h1>Book it!</h1><em>a simple reservation manager</em>
+      <h1>BookIt!</h1><em>a simple reservation manager</em>
       <nav id="primary">
         <ul>
           <%= content_tag :li, link_to( t('navigation.dashboard'), :controller => "dashboard") %>
           <%= content_tag :li, link_to( t('navigation.tenants'), :controller => "tenants") %>
           <%= content_tag :li, link_to( t('navigation.bookings'), :controller => "bookings") %>
+          <%= content_tag :li, link_to( t('navigation.users'), :controller => "users") %>
           <%= content_tag :li, link_to( t('navigation.settings'), :controller => "settings") %>
         </ul>
       </nav>
       <nav id="userinfo">
         <% if logged_in? %>
           Hi <%= @current_user.name %>, 
-          <%= link_to "Edit info", edit_user_path(current_user) %>
-          <%= link_to "New user", new_user_path %>
+          <%= link_to "My info", edit_user_path(current_user) %>
           <%= link_to "Logout", logout_path %>
         <% else %>
           <%= link_to "Login", login_path %>    
@@ -65,16 +62,17 @@
 	    </nav>
         <%= content_tag :p, notice, :class => 'notice' if notice.present? %>
         <%= content_tag :p, alert, :class => 'alert' if alert.present? %>
-	    
-      <article>
-        <%= yield %>
-      </article>
-      <aside>
-        <%= yield :aside %>
-      </aside>
+	    <section id="content">
+        <article>
+          <%= yield %>
+        </article>
+        <aside>
+          <%= yield :aside %>
+        </aside>
+      </section>
     </div>
     <footer>
-      Book It is created by <a href="http://twitter.com/lekkerduidelijk">@lekkerduidelijk</a> - <%= l Time.now %>
+      BookIt! is created by <a href="http://twitter.com/lekkerduidelijk">@lekkerduidelijk</a> - <%= l Time.now %>
     </footer>
   </div>
   <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> -->

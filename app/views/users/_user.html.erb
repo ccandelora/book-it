@@ -1,0 +1,21 @@
+  <tr>
+    <td>
+      <strong>
+        <%= user.name %>
+      </strong>
+    </td>
+    <td>
+      <%= user.email %>
+    </td>
+    <td>
+      <%= user.account_type %>
+      <% if user.is_admin(user) %>
+       Admin
+      <% end %>
+    </td>
+    <td>
+      <% if is_admin? || user == current_user %>
+        <%= link_to 'Edit', edit_user_path(user)%>
+      <% end %>
+    </td>
+  </tr>

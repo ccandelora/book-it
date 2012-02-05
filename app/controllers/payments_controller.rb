@@ -2,9 +2,11 @@ class PaymentsController < ApplicationController
 
   before_filter :authenticate
 
-  add_breadcrumb "Payment type", :new_payment_path
+  add_breadcrumb "Settings", :settings_path
   
   def new
+    add_breadcrumb "New payment status", :new_payment_path
+    
     @payments = Payment.all
     @payment = Payment.new
   end
@@ -13,7 +15,7 @@ class PaymentsController < ApplicationController
     @payments = Payment.all    
     @payment = Payment.new(params[:payment])
     if @payment.save
-      redirect_to bookings_path, :notice => 'Payment successfully added.'
+      redirect_to bookings_path, :notice => 'Payment status successfully added.'
     else
       render :action => 'new'
     end

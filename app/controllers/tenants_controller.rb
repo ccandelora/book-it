@@ -1,5 +1,5 @@
 class TenantsController < ApplicationController
-  
+  require 'uri'
   before_filter :authenticate
 
   add_breadcrumb "Tenants", :tenants_path
@@ -20,6 +20,9 @@ class TenantsController < ApplicationController
   def show
     @tenant = Tenant.find(params[:id])
     add_breadcrumb @tenant.name, :tenant_path
+    
+    @tenantmapurl = URI.escape(@tenant.address + @tenant.city)
+    
     
     respond_to do |format|
       format.html # show.html.erb

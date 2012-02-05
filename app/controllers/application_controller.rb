@@ -29,6 +29,17 @@ class ApplicationController < ActionController::Base
 
     # Make logged_in? available in templates as a helper
     helper_method :logged_in?
+    
+    # Is current user an admin
+    def is_admin?
+      if current_user.account_type == 1
+        return true
+      else
+        return false
+      end
+    end
+    
+    helper_method :is_admin?
 
     def access_denied
       redirect_to login_path, :notice => "Please log in to continue" and return false

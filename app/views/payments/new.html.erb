@@ -1,7 +1,7 @@
-<h1>New payment type</h1>
+<h1>New payment status</h1>
 
 <p class="info">
-  Current payment types are 
+  Current payment status are:
   <% @payments.each do |payment| %>
     <strong><%= payment.title %></strong>
     <%= h "," if !@payments.last %>

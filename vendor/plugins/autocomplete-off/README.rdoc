@@ -1,0 +1,46 @@
+= autocomplete-off
+
+Adds `autocomplete="off"` html attribute to input tags by default. You can enable the autocomplete browser feature by
+explicitly setting the option "on".
+
+Works with every Rails FormHelper like `text_field_tag`, `f.text_field`, etc.
+
+== Installation
+
+Add the following line to your Gemfile
+  gem "autocomplete-off"
+
+And run
+  bundle install
+
+Or if you want to use it as plugin
+  rails plugin install git://github.com/phatworx/autocomplete-off.git
+
+== Using
+
+It works right out of the box. Just install, restart your server and see it working.
+
+== Features
+
+* Handle input tag with type text or password or email and add default autocomplete=off for default
+
+== Maintainers
+
+* Team Phatworx (http://github.com/phatworx)
+* Alexander Dreher (http://github.com/alexdreher)
+
+
+== Contributing to autocomplete-off
+ 
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
+* Fork the project
+* Start a feature/bugfix branch
+* Commit and push until you are happy with your contribution
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+== Copyright
+
+Copyright (c) 2011 Alexander Dreher. See LICENSE.txt for further details.
+

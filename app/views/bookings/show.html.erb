@@ -1,6 +1,5 @@
 
-<h1>Show booking</h1>
-
+  <h1>Show booking <span class="headactions"><%= link_to 'Edit', edit_booking_path(@booking) %> | <%= link_to 'Delete', @booking, :confirm => "Are you sure?", :method => :delete %></span></h1>
 
   <div id="booking_details">
     <table>
@@ -39,10 +38,7 @@
         <th>Status:</th>
         <td><%= @booking.status %></td>
       </tr>
-
     </table>
-</div>
+    
+  </div>
 
-
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Delete', @booking, :confirm => "Are you sure?", :method => :delete %>

@@ -1,0 +1,16 @@
+<h1><%= t '.title' %></h1>
+
+<table>
+  <tr>
+    <th><%= t 'user.name' %></th>
+    <th><%= t 'user.email' %></th>
+    <th><%= t 'user.account_type' %></th>
+    <th></th>    
+  </tr>
+<%= render @users %>
+</table>
+<br />
+
+<% content_for :aside do %>
+<%= link_to 'New user', new_user_path, {:class => 'button'} %>
+<% end %>

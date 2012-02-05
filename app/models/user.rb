@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :email, :presence => true
   validates :name, :presence => true
   
-  has_many :comments
+  has_many :comments, :dependent => :destroy
   
   before_save :encrypt_new_password
   
@@ -22,6 +22,22 @@ class User < ActiveRecord::Base
     self.hashed_password == encrypt(password)
   end
 
+  def is_admin(username)
+    if username.account_type == 1
+      return true
+    else
+      return false
+    end
+  end
+  
+  def pretty_user(username)
+    if(username.account_type == 1)
+      return "admin"
+    else
+      return "user"
+    end
+  end
+  
   protected
     def encrypt_new_password
       return if password.blank?

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110405204427) do
+ActiveRecord::Schema.define(:version => 20120203231404) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "tenant_id"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20110405204427) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
+    t.integer  "account_type"
   end
 
 end

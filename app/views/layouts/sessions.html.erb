@@ -27,19 +27,13 @@
 </head>
 <body id="page-login">
   <div id="container">
-    <header>
-      <h1>Book it!</h1><em>a simple reservation manager</em>
-    </header>
-
   	<div id="main" role="main">  
-      <article>
-        <%= content_tag :p, notice, :class => 'notice' if notice.present? %>
-        <%= content_tag :p, alert, :class => 'alert' if alert.present? %>    
+      <section id="content">
         <%= yield %>
-      </article>
+      </section>
     </div>
     <footer>
-      Book It is created by <a href="http://twitter.com/lekkerduidelijk">@lekkerduidelijk</a> - <%= l Time.now %>
+      BookIt! is created by <a href="http://twitter.com/lekkerduidelijk">@lekkerduidelijk</a>
     </footer>
   </div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>

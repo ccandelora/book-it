@@ -33,7 +33,9 @@ class BookingsController < ApplicationController
 
 
   def edit
+
     @booking = Booking.find(params[:id])
+      add_breadcrumb 'Edit', booking_path
   end
 
   def create

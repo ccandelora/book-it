@@ -197,6 +197,8 @@ nl:
     dashboard:  "Dashboard"
     tenants:    "Huurders"
     bookings:   "Reserveringen"
+    settings:   "Instellingen"
+    users:      "Gebruikers"
       
   booking:
     tenant:     "Huurder"
@@ -218,3 +220,17 @@ nl:
       type:       "Type"
       payment:    "Bet."
       status:     "Status"
+      
+  users:
+    index:
+      title: "Overzicht van gebruikers"
+      
+  user:
+    name:         "Naam"
+    email:        "E-mail"
+    account_type: "Account type"
+      
+  login:
+    login:        "Inloggen"
+    username:     "Gebruikersnaam"
+    password:     "Wachtwoord"

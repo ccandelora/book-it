@@ -1,6 +1,6 @@
   <tr>
     <td><%= link_to "Week " + booking.start_date.strftime("%W"), booking %> 
-    (<%= booking.start_date.strftime("%d-%m") + " - " +  booking.end_date.strftime("%d-%m") %>)
+    (<%= booking.start_date.strftime("%d-%m-%Y") + " - " +  booking.end_date.strftime("%d-%m-%Y") %>)
     </td>
     <td><%= link_to booking.tenant.name, booking.tenant %></td>
     <td><%= booking.persons %></td>
@@ -9,4 +9,5 @@
       <%= Payment.find(booking.payment_id).title %>
     </td>
     <td><%= booking.status %></td>
+    <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
   </tr>  
